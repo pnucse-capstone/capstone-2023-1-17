@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:id="@+id/detail_img_layout">
+
+        <ImageView
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="#f0f0f0"
+            android:layout_gravity="center"
+            android:tooltipText="눌러서 동영상을 추가하세요"
+            android:clickable="true"
+            android:id="@+id/add_img"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/detail_img_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:id="@+id/add_detail_layout">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="이름"
+            android:textSize="24dp"
+            android:layout_margin="10dp"
+            android:id="@+id/add_name"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="설명"
+            android:textSize="18dp"
+            android:layout_margin="10dp"
+            android:id="@+id/add_inform"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="x축 크기"
+        android:textSize="16dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/add_xSize"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="y축 크기"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toRightOf="@id/add_xSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/add_ySize"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="z축 크기"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintLeft_toRightOf="@id/add_ySize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/add_zSize"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="가격"
+        android:textSize="24dp"
+        android:layout_margin="20dp"
+        android:id="@+id/add_price"
+        app:layout_constraintRight_toRightOf="@id/add_detail_layout"
+        app:layout_constraintTop_toTopOf="@id/add_detail_layout" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 추가하기 "
+        android:textSize="24dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/add_update_btn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

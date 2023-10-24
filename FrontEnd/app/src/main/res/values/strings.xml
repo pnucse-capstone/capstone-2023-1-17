@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NeRF를 이용한 중고시장 플랫폼</string>
+    <string name="game_view_content_description">Game view</string>
+    <string name="SERVER_URL">http://172.22.61.33:3389</string>
+</resources>
