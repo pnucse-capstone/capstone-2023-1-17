@@ -28,6 +28,22 @@
 
 ## 3. 구성도
 
+### 구조
+
+![구조_단순화](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/6b6aac58-7392-406b-9299-57760340d941)
+
+<br>
+
+### 판매자 로직
+
+![판매자 로직](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/092c52d7-e3e9-431e-ae17-b4a884aec510)
+
+<br>
+
+### 구매자 로직
+
+![구매자 로직](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/40d202cb-e6f2-47e2-b707-7cf18ce3fc8f)
+
 <br>
 
 ## 4. 소개 및 시연 영상
@@ -41,6 +57,69 @@
 <details>
 <summary>서버</summary>
 <div>
+
+### <<필요 소프트웨어>>
+
+Docker and nvidia GPU drivers, capable of working with CUDA 11.8, must be installed.
+
+### <<docker image를 사용해 server+nerfstudio docker container 생성>>
+
+docker pull jaesubkwon/nerfserver:1.0.1
+
+docker run --gpus all -v C:\d\nerfserver\data:/workspace/ ^
+-v C:\d\nerfserver\.cache:/home/user/.cahce/ ^
+-p 3389:3389 ^
+--name nerfserver -it jaesubkwon/nerfserver:1.0.1
+
+### <<docker image를 사용해 MariaDB docker container 생성>>
+
+docker pull mariadb
+
+docker run --name mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mariadb
+
+### <<docker network container 생성 후, 해당 network container에 'nerfserver', 'mariadb' container를 연결>>
+
+docker network create internalNetwork
+
+docker network connect internalNetwork nerfserver
+
+docker network connect internalNetwork mariadb
+
+### <<MariaDB에 DB 생성 후 table 생성>>
+
+이름이 'nerf' 인 DB 생성.
+아래 쿼리를 사용해 'nerf' DB에 테이블 'post', 'meshInfo' 생성.
+
+```
+CREATE TABLE `post` (
+    `id`				bigint(20)    NOT NULL AUTO_INCREMENT,
+    `userId`			bigint(20)    NOT NULL,
+    `title`				varchar(3000) NOT NULL,
+    `content`			varchar(3000) NOT NULL,
+    `price`				bigint(20)    NOT NULL,
+    `date`				datetime	  NOT NULL,
+    `numberOfImages`		bigint(20)    NOT NULL,
+    `state`				varchar(100) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `meshInfo` (
+    `id`		bigint(20)    NOT NULL,
+    `xSize`		double,
+    `ySize`		double,
+    `zSize`		double,
+    PRIMARY KEY (`id`)
+);
+```
+
+### <<서버 실행 준비>>
+
+서버파일 빌드 후, 생성된 .jar 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
+test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
+
+### <<'nerfserver' container에서 .jar 파일을 통해 서버 실행>>
+
+예시: java -jar server.jar
 
 </div>
 </details>
