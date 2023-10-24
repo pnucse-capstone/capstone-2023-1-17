@@ -54,7 +54,11 @@
 
 <br>
 
-## 5. 사용법
+## 5. 프로젝트 구조
+
+<br>
+
+## 6. 사용법
 
 <details>
 <summary>서버</summary>
@@ -129,6 +133,14 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 <details>
 <summary>프론트엔드</summary>
 <div>
+
+### 1. Android Stduio 설치하기
+
+### 2. Unity 설치하기
+
+### 3.
+
+### 4.
 
 </div>
 </details>
