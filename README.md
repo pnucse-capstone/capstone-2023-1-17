@@ -16,6 +16,8 @@
 
 ## 4. 소개 및 시연 영상
 
+## 5. 사용법
+
 <details>
 <summary>서버</summary>
 <div>
@@ -29,5 +31,3 @@
 
 </div>
 </details>
-
-## 5. 사용법
