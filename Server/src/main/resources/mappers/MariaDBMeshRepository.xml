@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="capstone.nerfserver.repository.MariaDBMeshInfoRepository">
+
+    <!-- tb_post 테이블 전체 컬럼 -->
+    <sql id="postColumns">
+        id
+        , xSize
+        , ySize
+        , zSize
+    </sql>
+
+
+    <!-- 정보 저장 -->
+    <insert id="save" parameterType="capstone.nerfserver.domain.MeshInfo">
+        INSERT INTO meshInfo (
+        <include refid="postColumns" />
+        ) VALUES (
+        #{id}
+        , #{xSize}
+        , #{ySize}
+        , #{zSize}
+        )
+    </insert>
+
+
+    <!-- 정보 업데이트 -->
+    <update id="update" parameterType="capstone.nerfserver.domain.MeshInfo">
+        UPDATE meshInfo
+        SET
+            xSize = #{xSize}
+          , ySize = #{ySize}
+          , zSize = #{zSize}
+        WHERE
+            id = #{id}
+    </update>
+
+
+    <!-- 정보 조회 -->
+    <select id="findById" parameterType="long" resultType="capstone.nerfserver.domain.MeshInfo">
+        SELECT
+        <include refid="postColumns" />
+        FROM
+        meshInfo
+        WHERE
+        id = #{value}
+    </select>
+
+
+    <!-- 정보 삭제 -->
+    <delete id="clearStore">
+        DELETE
+        FROM
+            meshInfo
+    </delete>
+
+</mapper>
