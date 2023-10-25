@@ -71,6 +71,8 @@ capstone-2023-1-17
 
 capstone-2023-1-17 프로젝트를 클론한다.
 
+이후 로컬 서버와 프론트엔드 부분을 시행한다.
+
 <br>
 
 <details>
@@ -140,6 +142,8 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
 예시: java -jar server.jar
 
+<br>
+
 </div>
 </details>
 
@@ -192,7 +196,13 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
 - 안드로이드 플랫폼으로 변경하기
 
+  Android로 플랫폼을 변경한 후, Switch Platform을 선택한다.
+
+<br>
+
 - export 하기
+
+  export 위치는 FrontEnd의 unity_export 폴더로 설정한다.
 
 <br>
 
@@ -204,9 +214,13 @@ Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해�
 
 현재 사진을 추가하는 기능은 막아놓은 상태이다.
 
+<br>
+
 - **xrmanifest.androidlib 주석처리하기**
 
   현재 프로젝트의 **Unity XR Plugin Manager**가 4.4.0 버전으로 설치되어있어, export 시 xrmanifest.androidlib가 생긴다. 이전 버전으로 설치되어 있는 경우, 파일이 없을 수 있다.
+
+  ![의존성](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/16c6f5cf-00b8-41f8-9fb3-a1b3115406c3)
 
   ```
   // unityLibrary build.gradle
@@ -226,6 +240,8 @@ Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해�
 
   에서 NDK를 설치한 후,
   android.ndkDirectory를 설치된 NDK 위치로 변경한다.
+
+  ![ndk](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/36cb62ac-62d7-4565-8637-0f3d92498e32)
 
   윈도우 기준, 대부분
 
@@ -250,6 +266,8 @@ Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해�
   unity 어플과 안드로이드 어플이 각각 설치되기를 원하지 않는다면,
   intent-filter를 삭제해야한다.
 
+  ![캡처](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/011cfd9a-d51c-4086-82ab-d1f714704635)
+
   ```
   <activity android:name="com.unity3d.player.UnityPlayerActivity" android:theme="@style/UnityThemeSelector" android:screenOrientation="fullUser" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:resizeableActivity="false" android:hardwareAccelerated="false" android:exported="true">
     <!-- 삭제
@@ -271,7 +289,9 @@ Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해�
 
   app/assets/values/string.xml에 서버 주소를 입력한다.
 
-  현재는 로컬 주소가 입력되어 있다.
+  ![서버](https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/8ca4396e-a432-4527-ae72-9e74d77f952c)
+
+현재는 로컬 주소가 입력되어 있다.
 
   <br>
 
