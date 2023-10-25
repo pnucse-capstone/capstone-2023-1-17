@@ -57,7 +57,12 @@
 ## 5. 프로젝트 구조
 
 ```
-
+capstone-2023-1-17
+ ┣ 📂docs               // 졸업과제 제출용 문서
+ ┣ 📂FrontEnd           // 안드로이드 프로젝트
+ ┃ ┗ 📂unity_export    // Unity export 경로
+ ┣ 📂Server             // SpringBoot 프로젝트
+ ┗ 📂Unity              // Unity3d 프로젝트
 ```
 
 <br>
