@@ -198,6 +198,8 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
   Android로 플랫폼을 변경한 후, Switch Platform을 선택한다.
 
+  <img width="500" alt="스크린샷 2023-10-25 071717" src="https://github.com/pnucse-capstone/capstone-2023-1-17/assets/48244988/5f880ae8-fea8-41ed-8a82-d61401319a22">
+
 <br>
 
 - export 하기
