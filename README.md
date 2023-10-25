@@ -69,6 +69,10 @@ capstone-2023-1-17
 
 ## 6. 사용법
 
+capstone-2023-1-17 프로젝트를 클론한다.
+
+<br>
+
 <details>
 <summary>서버</summary>
 <div>
@@ -145,9 +149,29 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
 ### 0. 의존성
 
-### 1. Unity 설치하기
+**유니티**
+
+-
+-
+-
+
+<br>
+
+**안드로이드**
+
+-
+-
+-
+
+### 1. Unity 설정하기
+
+- 서버 설정하기
 
 ### 2. Unity 프로젝트를 안드로이드 플랫폼으로 export 하기
+
+- 안드로이드 플랫폼으로 변경하기
+
+- export 하기
 
 ### 3. 안드로이드 설정 변경하기
 
