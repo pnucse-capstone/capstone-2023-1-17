@@ -151,27 +151,50 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
 **유니티**
 
--
--
--
+- Unity 2022.3.4f1
+- Unity XR Plugin Manager 4.4.0
+- AR Foundation 5.0.7
+- Google ARCore XR Plugin 5.0.7
 
 <br>
 
 **안드로이드**
 
--
--
--
+- minSdk 24
+- compileSDK 33
+- targetSDK 33
+- NDK 25.2.9519653
+- Android Gradle plugin 7.4.2
+- Volley 1.2.1
+- gson 2.10.1
+
+<br>
 
 ### 1. Unity 설정하기
 
 - 서버 설정하기
+
+  Assets/\_Scripts 폴더의 connection 스크립트에서
+  URL 변수에 서버의 주소를 입력한다.
+
+  ```
+  public class Connection : MonoBehaviour
+  {
+      ...
+      private string URL = "http://172.22.61.33:3389";
+      ...
+  }
+  ```
+
+<br>
 
 ### 2. Unity 프로젝트를 안드로이드 플랫폼으로 export 하기
 
 - 안드로이드 플랫폼으로 변경하기
 
 - export 하기
+
+<br>
 
 ### 3. 안드로이드 설정 변경하기
 
