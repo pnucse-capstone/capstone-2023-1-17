@@ -148,6 +148,10 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 
 Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해야 한다.
 
+현재는 졸업과제 발표를 위해, 서버에 3개의 전처리된 결과를 입력한 후 시작한다.
+
+현재 사진을 추가하는 기능은 막아놓은 상태이다.
+
 - **xrmanifest.androidlib 주석처리하기**
 
   현재 프로젝트의 **Unity XR Plugin Manager**가 4.4.0 버전으로 설치되어있어, export 시 xrmanifest.androidlib가 생긴다. 이전 버전으로 설치되어 있는 경우, 파일이 없을 수 있다.
