@@ -34,7 +34,7 @@ class AdditionActivity: AppCompatActivity() {
 
         binding.addImg.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
-            intent.type = "image/*"
+            intent.type = "video/*"
             activityResult.launch(intent)
         }
 
