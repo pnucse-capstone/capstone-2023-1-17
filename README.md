@@ -56,6 +56,10 @@
 
 ## 5. 프로젝트 구조
 
+```
+
+```
+
 <br>
 
 ## 6. 사용법
@@ -134,13 +138,90 @@ test.sh 파일을 'nerfserver' container의 /workspace/ 에 위치시키기.
 <summary>프론트엔드</summary>
 <div>
 
-### 1. Android Stduio 설치하기
+### 0. 의존성
 
-### 2. Unity 설치하기
+### 1. Unity 설치하기
 
-### 3.
+### 2. Unity 프로젝트를 안드로이드 플랫폼으로 export 하기
 
-### 4.
+### 3. 안드로이드 설정 변경하기
+
+Gradle 파일이 변경되는 경우 **Sync Now**를 클릭하며 최신화해야 한다.
+
+- **xrmanifest.androidlib 주석처리하기**
+
+  현재 프로젝트의 **Unity XR Plugin Manager**가 4.4.0 버전으로 설치되어있어, export 시 xrmanifest.androidlib가 생긴다. 이전 버전으로 설치되어 있는 경우, 파일이 없을 수 있다.
+
+  ```
+  // unityLibrary build.gradle
+  dependencies {
+      ...
+      // implementation project('xrmanifest.androidlib')
+  }
+  ```
+
+  <br>
+
+- **NDK 경로 수정하기**
+
+  NDK가 설치되어 있지 않다면,
+
+  **File - Settings - Appearance & Behavior - System Settings - Android SDK**
+
+  에서 NDK를 설치한 후,
+  android.ndkDirectory를 설치된 NDK 위치로 변경한다.
+
+  윈도우 기준, 대부분
+
+  **"C:/Program Files/Unity/Hub/Editor/2022.3.4f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"**
+
+  로 변경하면 된다.
+
+  ```
+  // unityLibrary build.gradle
+  def BuildIl2Cpp(String workingDir, String configuration, String architecture, String abi, String[] staticLibraries) {
+      ...
+      commandLineArgs.add("--tool-chain-path=" + android.ndkDirectory) // android.ndkDirectory 변경
+      ...
+  }
+  ```
+
+  <br>
+
+- **unityLibrary Manifests 수정하기**
+
+  intent-filter는 안드로이드의 진입점을 의미한다.
+  unity 어플과 안드로이드 어플이 각각 설치되기를 원하지 않는다면,
+  intent-filter를 삭제해야한다.
+
+  ```
+  <activity android:name="com.unity3d.player.UnityPlayerActivity" android:theme="@style/UnityThemeSelector" android:screenOrientation="fullUser" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density" android:resizeableActivity="false" android:hardwareAccelerated="false" android:exported="true">
+    <!-- 삭제
+    <intent-filter>
+      <category android:name="android.intent.category.LAUNCHER" />
+      <action android:name="android.intent.action.MAIN" />
+    </intent-filter>
+    -->
+    <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+    <meta-data android:name="notch_support" android:value="true" />
+  </activity>
+  ```
+
+<br>
+
+### 4. 빌드하기
+
+- 서버 주소 입력하기
+
+  app/assets/values/string.xml에 서버 주소를 입력한다.
+
+  현재는 로컬 주소가 입력되어 있다.
+
+  <br>
+
+- 빌드하기
+
+  **Run 'app'**을 통해 바로 실행하거나 apk 파일로 추출하여 실행한다.
 
 </div>
 </details>
