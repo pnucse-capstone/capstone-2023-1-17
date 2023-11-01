@@ -50,7 +50,7 @@
 
 ## 4. 소개 및 시연 영상
 
-[![2023년 전기 졸업과제 17 에듀윌](http://img.youtube.com/vi/rWo9_P54QVs/0.jpg)](https://www.youtube.comwatch?v=rWo9_P54QVs)
+[![2023년 전기 졸업과제 17 에듀윌](http://img.youtube.com/vi/rWo9_P54QVs/0.jpg)](https://www.youtube.com/watch?v=rWo9_P54QVs)
 <br>
 
 ## 5. 프로젝트 구조
