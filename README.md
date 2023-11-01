@@ -50,8 +50,7 @@
 
 ## 4. 소개 및 시연 영상
 
-### 추가 예정
-
+[![2023년 전기 졸업과제 17 에듀윌](http://img.youtube.com/vi/rWo9_P54QVs/0.jpg)](https://www.youtube.comwatch?v=rWo9_P54QVs&list=PLFUP9jG-TDp96chsm66TfMPlAJXIt6Gr9&index=15&ab_channel=부산대학교정보컴퓨터공학부)
 <br>
 
 ## 5. 프로젝트 구조
